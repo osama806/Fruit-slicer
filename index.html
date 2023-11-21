@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fruit Slicer</title>
+    <link rel="shortcut icon" href="./images/heart.svg" type="image/x-icon">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="badge">Score: <span id="score-val">0</span></div>
+      <div class="badge" id="lives">
+        <img src="images/heart.svg" alt="life" />
+        <img src="images/heart.svg" alt="life" />
+        <img src="images/heart.svg" alt="life" />
+      </div>
+      <div id="canvas">
+        <div class="fruit"></div>
+      </div>
+      <button class="button" id="start-btn">Start Game</button>
+    </div>
+    <p class="time" style="color: black">Time: <span class="timer">60</span></p>
+    <script src="app.js"></script>
+  </body>
+</html>

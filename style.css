@@ -1,0 +1,134 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  color: #ebebeb;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(rgba(0, 209, 177, 0.1), #ebebeb);
+  font-family: Helvetica, Arial, sans-serif;
+}
+h1 {
+  color: #0a0a0a;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container {
+  width: 50%;
+  height: 540px;
+  padding: 20px;
+  max-width: 720px;
+  position: relative;
+  text-align: center;
+  border-radius: 10px;
+  background: #00d1b1;
+  box-sizing: border-box;
+}
+.badge {
+  padding: 7px;
+  font-size: 1.2em;
+  line-height: 30px;
+  position: absolute;
+  text-align: center;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.3);
+}
+.badge#score {
+  top: 20px;
+  left: 20px;
+}
+.badge#lives {
+  top: 20px;
+  opacity: 0;
+  right: 20px;
+  width: 130px;
+  height: 44px;
+  transition: opacity 0.5s;
+}
+.badge#lives > img {
+  height: 90%;
+  margin-right: 5px;
+  filter: drop-shadow(0px 0px 10px white);
+}
+#canvas {
+  width: 100%;
+  height: 350px;
+  margin-top: 65px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+  background: white;
+}
+.button {
+  border: none;
+  outline: none;
+  margin: 0.5rem;
+  cursor: pointer;
+  color: #00d1b2;
+  border-width: 1px;
+  font-size: 1.25rem;
+  text-align: center;
+  border-radius: 4px;
+  transition: all 0.2s;
+  border-style: solid;
+  white-space: nowrap;
+  border-color: #fff;
+  display: inline-block;
+  justify-content: center;
+  background-color: white;
+  padding: calc(0.375em - 1px) 0.75rem;
+  box-shadow: 1px 4px 5px 0px rgba(0, 0, 0, 0.3);
+}
+.button:active {
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.3);
+}
+.is-success {
+  background: #23d160 !important;
+}
+.is-danger {
+  background: #fe385f !important;
+}
+.fruit {
+  width: 100px;
+  height: 121px;
+  display: inline-block;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 0 0;
+}
+.fruit::before,
+.fruit::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background-image: inherit;
+  background-repeat: no-repeat;
+}
+.fruit::before {
+  clip-path: polygon(0 100%, 100% 0, 0 0);
+}
+.fruit::after {
+  right: 1px;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+}
+.fruit.sliced::before,
+.fruit.sliced::after {
+  opacity: 0;
+  transition: transform 0.2s, opacity 0.5s;
+}
+.fruit.sliced::before {
+  transform: translate(-5.5%, -5.5%);
+}
+.fruit.sliced::after {
+  transform: translate(5.5%, 5.5%);
+}
